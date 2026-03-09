@@ -1,0 +1,206 @@
+
+-- 1. Compare the satisfaction levels between different departments in the last 2 years.
+SELECT 
+  NON EMPTY { [Measures].[SatisfactionLevel] } ON COLUMNS,
+
+  NON EMPTY {
+    (
+      [Department].[Department Name].[Department Name].ALLMEMBERS 
+      * 
+     { [Time].[Time hierarchy].[Year].[2023], [Time].[Time hierarchy].[Year].[2024] }
+    )
+  } 
+  DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM [University DW];
+
+-- 2. Do better paid teachers have better approval ratings in the last 2 years?
+ SELECT 
+ NON EMPTY { [Measures].[ApprovalRating] } ON COLUMNS, 
+ NON EMPTY { 
+ ([Lecturer].[Salary Range].[Salary Range].ALLMEMBERS 
+ * 
+ { [Time].[Time hierarchy].[Year].[2023], [Time].[Time hierarchy].[Year].[2024] }
+ ) 
+ } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS 
+ FROM [University DW];
+
+ -- 3. Compare the approval ratings of lecturers in different age groups in the last 2 years.
+ SELECT 
+ NON EMPTY {
+ [Measures].[ApprovalRating] } 
+ ON COLUMNS, NON EMPTY { 
+ (
+  [Lecturer].[Age Category].[Age Category].ALLMEMBERS 
+ * 
+ { [Time].[Time hierarchy].[Year].[2023], [Time].[Time hierarchy].[Year].[2024] }
+ ) 
+ } ON ROWS 
+ FROM [University DW];
+
+ -- 4.Does the number of courses conducted in one semester by a certain university
+--teacher might have affected the satisfaction of students he teaches in the last 2
+--years?
+
+WITH 
+MEMBER [Measures].[Year] AS
+  [Time].[Time hierarchy].CurrentMember.Parent.Name
+SELECT
+  NON EMPTY 
+    { 
+      [Measures].[Year],
+      [Measures].[SatisfactionLevel], 
+      [Measures].[Num of Subjects] 
+    } ON COLUMNS,
+  NON EMPTY 
+    CrossJoin(
+      Filter(
+        [Time].[Time hierarchy].[Semester].Members,
+        [Time].[Time hierarchy].CurrentMember.Parent.Name = '2023'
+        OR 
+        [Time].[Time hierarchy].CurrentMember.Parent.Name = '2024'
+      ),
+      [Lecturer].[Name And Surname].[Name And Surname].Members
+    ) ON ROWS
+
+FROM [University DW]
+-- 5. Rank bottom 20 subjects with the lowest satisfaction levels in the students surveys and thus might have lowered the overall satisfaction in the last 2 years.
+WITH 
+MEMBER [Measures].[CombinedSatisfaction] AS
+    ([Measures].[SatisfactionLevel], [Time].[Year].[2023]) +
+    ([Measures].[SatisfactionLevel], [Time].[Year].[2024])
+SET [Bottom20_Combined] AS
+    BottomCount(
+        [Subject].[Subject Name].Members,
+        20,
+        [Measures].[CombinedSatisfaction]
+    )
+SELECT 
+{
+    ([Measures].[SatisfactionLevel], [Time].[Year].[2023]),
+    ([Measures].[SatisfactionLevel], [Time].[Year].[2024])
+} ON COLUMNS,
+[Bottom20_Combined] ON ROWS
+
+FROM [University DW]
+
+
+--6. How has the student performance in the subject changed compared to previous semesters?
+SELECT 
+  NON EMPTY
+    [Time].[Year].[Year].Members * [Time].[Semester].[Semester].Members ON COLUMNS,
+  NON EMPTY
+    [Subject].[Subject Name].Members ON ROWS
+FROM 
+  [University DW]
+WHERE 
+  ([Measures].[AverageGrade]);
+
+--7. Compare student performance in this subject across different majors(courses of study).
+SELECT 
+  NON EMPTY
+	[Major].[Major Name].Members ON COLUMNS,
+  NON EMPTY
+    [Subject].[Subject Name].Members ON ROWS
+FROM 
+  [University DW]
+WHERE 
+  ([Measures].[AverageGrade]);
+
+
+--8. Has the difficulty level of the subject(as perceived by students) changed compared to last year?
+WITH
+MEMBER [Measures].[Difficulty Change] AS
+  ROUND(
+    ([Time].[Year].[2025], [Measures].[AverageDifficulty]) -
+    ([Time].[Year].[2024], [Measures].[AverageDifficulty]),
+    2
+  )
+
+SELECT 
+  {
+    [Measures].[Difficulty Change]
+  } ON COLUMNS,
+  NON EMPTY [Subject].[Subject Name].Members ON ROWS
+FROM [University DW]
+
+
+--9 Does the overall student satisfaction in a given subject impact the average grade obtained in the same subject?
+WITH
+MEMBER [Measures].[Satisfaction-grade Ratio] AS
+  IIF(
+    [Measures].[AverageGrade] = 0,
+    NULL,
+    ROUND([Measures].[SatisfactionLevel] / [Measures].[AverageGrade], 2)
+  )
+
+SELECT
+  {
+    [Measures].[SatisfactionLevel],
+    [Measures].[AverageGrade],
+    [Measures].[Satisfaction-grade Ratio]
+  } ON COLUMNS,
+  [Subject].[Subject Name].Members ON ROWS
+FROM [University DW]
+WHERE ([Time].[Year].[2025])
+
+--10. Which majors showed the most improvement/decline in student performance in this subject compared to the previous year?
+-- For the subject "Breeding of Giant Eagles"
+WITH
+MEMBER [Measures].[Grade Change] AS
+  ROUND(
+    ([Time].[Year].[2025], [Subject].[Subject Name].[Breeding of Giant Eagles], [Measures].[AverageGrade]) -
+    ([Time].[Year].[2024], [Subject].[Subject Name].[Breeding of Giant Eagles], [Measures].[AverageGrade]),
+    2
+  )
+SET [Majors] AS
+  [Major].[Major Name].Members
+
+SET [ValidMajors] AS
+  Filter([Majors], NOT IsEmpty([Measures].[Grade Change]))
+-- Top 2
+SET [TopMajors] AS
+  TopCount([ValidMajors], 2, [Measures].[Grade Change])
+-- Bottom 2 
+SET [BottomMajors] AS
+  BottomCount([ValidMajors], 2, [Measures].[Grade Change])
+
+SELECT 
+  {[Measures].[Grade Change]} ON COLUMNS,
+  Union([TopMajors], [BottomMajors]) ON ROWS
+FROM [University DW]
+WHERE (
+  [Time].[Year].[2025],
+  [Subject].[Subject Name].[Breeding of Giant Eagles]
+)
+
+--11 How much do average student grades vary between subjects in the year 2025 across all subjects?
+WITH
+MEMBER [Measures].[Grade Variance] AS
+  VAR(
+    [Subject].[Subject Name].Members,
+    ([Time].[Year].[2025], [Measures].[AverageGrade])
+  )
+
+SELECT
+  {[Measures].[Grade Variance]} ON COLUMNS
+FROM [University DW]
+
+
+SELECT 
+  [Measures].[SatisfactionLevel] ON COLUMNS, 
+    { [Time].[Year].[2023], [Time].[Year].[2024]} ON ROWS
+  FROM [University DW];
+
+SELECT 
+  [Measures].[Grade Count] ON COLUMNS,
+  [Subject].[Subject Name].Members ON ROWS
+FROM [University DW];
+
+SELECT 
+	[Major].[Major Name].Members ON COLUMNS,
+    [Subject].[Subject Name].Members ON ROWS
+FROM 
+  [University DW]
+WHERE 
+  ([Measures].[AverageGrade]);
+

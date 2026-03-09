@@ -1,0 +1,1333 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/24/2025 1:27:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-EH9OU6I"
+  DTS:CreatorName="DESKTOP-EH9OU6I\marys"
+  DTS:DTSID="{D6E9720D-46FA-4424-91B9-246D616CC64B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{785C89C7-54A0-4F92-8D92-B054EBDA9CD5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-EH9OU6I\MSSQLSERVER2019.UniversityDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CA9C1E96-9612-46D2-BFB9-18DB26F16505}"
+      DTS:ObjectName="DESKTOP-EH9OU6I\MSSQLSERVER2019.UniversityDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-EH9OU6I\MSSQLSERVER2019;Initial Catalog=UniversityDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CA9C1E96-9612-46D2-BFB9-18DB26F16505}DESKTOP-EH9OU6I\MSSQLSERVER2019.UniversityDW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-EH9OU6I\MSSQLSERVER2019.UniversityDW 1]"
+      DTS:CreationName="MSOLAP100"
+      DTS:DTSID="{4E671AD1-187D-4BA1-B19C-0FF9311A24FA}"
+      DTS:ObjectName="DESKTOP-EH9OU6I\MSSQLSERVER2019.UniversityDW 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Data Source=DESKTOP-EH9OU6I\MSSQLSERVER2019;Initial Catalog=UniversityDW;Integrated Security=SSPI;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_Load_Department.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{A2382A67-3591-40AF-A26A-BFAF0452210F}"
+      DTS:ObjectName="ETL_Load_Department.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\marys\Desktop\sem4\data warehouses\University program files\creating data warehouse\ETL_Load_Department.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_Load_Faculty.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{78259B9C-CAB4-4CD4-9A83-ADFE29AE4254}"
+      DTS:ObjectName="ETL_Load_Faculty.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\marys\Desktop\sem4\data warehouses\University program files\creating data warehouse\ETL_Load_Faculty.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_Load_Junk.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{306CC8A6-2E9E-43CD-976B-1BA990617B47}"
+      DTS:ObjectName="ETL_Load_Junk.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\marys\Desktop\sem4\data warehouses\University program files\creating data warehouse\ETL_Load_Junk.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_Load_Lecturer.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{929840AD-DD5D-43F5-887B-32407CE568EB}"
+      DTS:ObjectName="ETL_Load_Lecturer.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\marys\Desktop\sem4\data warehouses\University program files\creating data warehouse\ETL_Load_Lecturer.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_Load_Major.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{98EE9BA0-006B-41A5-AAB7-9206FA8C78A2}"
+      DTS:ObjectName="ETL_Load_Major.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\marys\Desktop\sem4\data warehouses\University program files\creating data warehouse\ETL_Load_Major.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_Load_Performance.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{47881655-C19D-485C-B52A-7544289CD113}"
+      DTS:ObjectName="ETL_Load_Performance.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\marys\Desktop\sem4\data warehouses\University program files\creating data warehouse\ETL_Load_Performance.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_Load_Student.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{BAAAD0BA-E981-4114-961B-1E6AFD06BDEF}"
+      DTS:ObjectName="ETL_Load_Student.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\marys\Desktop\sem4\data warehouses\University program files\creating data warehouse\ETL_Load_Student.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETL_Load_Subject.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{3E009165-9BE0-4A58-8CAF-EB973FCE4CB5}"
+      DTS:ObjectName="ETL_Load_Subject.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\marys\Desktop\sem4\data warehouses\University program files\creating data warehouse\ETL_Load_Subject.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{DF85E2EF-E937-447E-A14A-095692A1F2B5}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\marys\Desktop\sem4\data warehouses\University program files\creating data warehouse\survey_results.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Analysis Services Processing Task"
+      DTS:CreationName="Microsoft.DTSProcessingTask"
+      DTS:Description="Analysis Services Processing Task"
+      DTS:DTSID="{32F1AE26-A601-4206-89EF-19A940A70732}"
+      DTS:ExecutableType="Microsoft.DTSProcessingTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Analysis Services Processing Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ASProcessingData
+          ConnectionName="DESKTOP-EH9OU6I\MSSQLSERVER2019.UniversityDW 1"
+          ProcessingCommands="&lt;Batch xmlns=&quot;http://schemas.microsoft.com/analysisservices/2003/engine&quot;&gt;&#xA;  &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot; xmlns:ddl200=&quot;http://schemas.microsoft.com/analysisservices/2010/engine/200&quot; xmlns:ddl200_200=&quot;http://schemas.microsoft.com/analysisservices/2010/engine/200/200&quot; xmlns:ddl300=&quot;http://schemas.microsoft.com/analysisservices/2011/engine/300&quot; xmlns:ddl300_300=&quot;http://schemas.microsoft.com/analysisservices/2011/engine/300/300&quot; xmlns:ddl400=&quot;http://schemas.microsoft.com/analysisservices/2012/engine/400&quot; xmlns:ddl400_400=&quot;http://schemas.microsoft.com/analysisservices/2012/engine/400/400&quot; xmlns:ddl500=&quot;http://schemas.microsoft.com/analysisservices/2013/engine/500&quot; xmlns:ddl500_500=&quot;http://schemas.microsoft.com/analysisservices/2013/engine/500/500&quot;&gt;&#xA;    &lt;Object&gt;&#xA;      &lt;DatabaseID&gt;universityDW&lt;/DatabaseID&gt;&#xA;    &lt;/Object&gt;&#xA;    &lt;Type&gt;ProcessFull&lt;/Type&gt;&#xA;    &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;  &lt;/Process&gt;&#xA;&lt;/Batch&gt;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Department"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{CC0D5A9E-BBF5-460D-BE98-81486F412697}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Department"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CA9C1E96-9612-46D2-BFB9-18DB26F16505}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_Load_Department.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Excel"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{442DC643-E0BB-4DA0-B625-83948C812E42}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Excel">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Excel\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Excel\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[SurveyID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[SurveyID]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[SurveyID]"
+                      name="SurveyID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[StudentID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[StudentID]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[StudentID]"
+                      name="StudentID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[LecturerID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[LecturerID]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[LecturerID]"
+                      name="LecturerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[ClassesID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[ClassesID]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[ClassesID]"
+                      name="ClassesID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[SubjectID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[SubjectID]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[SubjectID]"
+                      name="SubjectID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Semester]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Semester]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Semester]"
+                      name="Semester"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Year]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Year]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Overall_Satisfaction]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Overall_Satisfaction]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Overall_Satisfaction]"
+                      name="Overall_Satisfaction"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Usefulness]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Usefulness]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Usefulness]"
+                      name="Usefulness"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Recommend_Course]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Recommend_Course]"
+                      length="255"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Recommend_Course]"
+                      name="Recommend_Course"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Clarity]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Clarity]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Clarity]"
+                      name="Clarity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Fairness]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fairness]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Fairness]"
+                      name="Fairness"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Use_of_Resources]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Use_of_Resources]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Use_of_Resources]"
+                      name="Use_of_Resources"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Most_Useful_Component]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Most_Useful_Component]"
+                      length="255"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Most_Useful_Component]"
+                      name="Most_Useful_Component"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Workload_Perception]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Workload_Perception]"
+                      length="255"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Workload_Perception]"
+                      name="Workload_Perception"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[SurveyID]"
+                      dataType="r8"
+                      name="SurveyID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[StudentID]"
+                      dataType="r8"
+                      name="StudentID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[LecturerID]"
+                      dataType="r8"
+                      name="LecturerID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[ClassesID]"
+                      dataType="r8"
+                      name="ClassesID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[SubjectID]"
+                      dataType="r8"
+                      name="SubjectID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Semester]"
+                      dataType="r8"
+                      name="Semester" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Year]"
+                      dataType="r8"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Overall_Satisfaction]"
+                      dataType="r8"
+                      name="Overall_Satisfaction" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Usefulness]"
+                      dataType="r8"
+                      name="Usefulness" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Recommend_Course]"
+                      dataType="wstr"
+                      length="255"
+                      name="Recommend_Course" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Clarity]"
+                      dataType="r8"
+                      name="Clarity" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fairness]"
+                      dataType="r8"
+                      name="Fairness" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Use_of_Resources]"
+                      dataType="r8"
+                      name="Use_of_Resources" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Most_Useful_Component]"
+                      dataType="wstr"
+                      length="255"
+                      name="Most_Useful_Component" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Workload_Perception]"
+                      dataType="wstr"
+                      length="255"
+                      name="Workload_Perception" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[SurveyID]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[SurveyID]"
+                      name="SurveyID" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[StudentID]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[StudentID]"
+                      name="StudentID" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[LecturerID]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[LecturerID]"
+                      name="LecturerID" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[ClassesID]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[ClassesID]"
+                      name="ClassesID" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[SubjectID]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[SubjectID]"
+                      name="SubjectID" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Semester]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Semester]"
+                      name="Semester" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Year]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Overall_Satisfaction]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Overall_Satisfaction]"
+                      name="Overall_Satisfaction" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Usefulness]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Usefulness]"
+                      name="Usefulness" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Recommend_Course]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Recommend_Course]"
+                      name="Recommend_Course" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Clarity]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Clarity]"
+                      name="Clarity" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Fairness]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Fairness]"
+                      name="Fairness" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Use_of_Resources]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Use_of_Resources]"
+                      name="Use_of_Resources" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Most_Useful_Component]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Most_Useful_Component]"
+                      name="Most_Useful_Component" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Workload_Perception]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Workload_Perception]"
+                      name="Workload_Perception" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Excel\Excel_Data Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Excel_Data Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Excel_Data]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Excel\Excel_Data Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-EH9OU6I\MSSQLSERVER2019.UniversityDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-EH9OU6I\MSSQLSERVER2019.UniversityDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[SurveyID]"
+                      cachedDataType="r8"
+                      cachedName="SurveyID"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[SurveyID]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[SurveyID]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[StudentID]"
+                      cachedDataType="r8"
+                      cachedName="StudentID"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentID]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[StudentID]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[LecturerID]"
+                      cachedDataType="r8"
+                      cachedName="LecturerID"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[LecturerID]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[LecturerID]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[ClassesID]"
+                      cachedDataType="r8"
+                      cachedName="ClassesID"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassesID]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[ClassesID]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[SubjectID]"
+                      cachedDataType="r8"
+                      cachedName="SubjectID"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubjectID]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[SubjectID]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[Semester]"
+                      cachedDataType="r8"
+                      cachedName="Semester"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Semester]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Semester]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[Year]"
+                      cachedDataType="r8"
+                      cachedName="Year"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[Overall_Satisfaction]"
+                      cachedDataType="r8"
+                      cachedName="Overall_Satisfaction"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Overall_Satisfaction]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Overall_Satisfaction]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[Usefulness]"
+                      cachedDataType="r8"
+                      cachedName="Usefulness"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usefulness]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Usefulness]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[Recommend_Course]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Recommend_Course"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Recommend_Course]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Recommend_Course]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[Clarity]"
+                      cachedDataType="r8"
+                      cachedName="Clarity"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Clarity]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Clarity]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[Fairness]"
+                      cachedDataType="r8"
+                      cachedName="Fairness"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fairness]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Fairness]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[Use_of_Resources]"
+                      cachedDataType="r8"
+                      cachedName="Use_of_Resources"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Use_Of_Resources]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Use_of_Resources]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[Most_Useful_Component]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Most_Useful_Component"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Most_Useful_Component]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Most_Useful_Component]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].Columns[Workload_Perception]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Workload_Perception"
+                      externalMetadataColumnId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Workload_Perception]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Workload_Perception]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[SurveyID]"
+                      dataType="i4"
+                      name="SurveyID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentID]"
+                      dataType="i4"
+                      name="StudentID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[LecturerID]"
+                      dataType="i4"
+                      name="LecturerID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassesID]"
+                      dataType="i4"
+                      name="ClassesID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubjectID]"
+                      dataType="i4"
+                      name="SubjectID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Semester]"
+                      dataType="i4"
+                      name="Semester" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Overall_Satisfaction]"
+                      dataType="ui1"
+                      name="Overall_Satisfaction" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usefulness]"
+                      dataType="ui1"
+                      name="Usefulness" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Recommend_Course]"
+                      dataType="wstr"
+                      length="3"
+                      name="Recommend_Course" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Clarity]"
+                      dataType="ui1"
+                      name="Clarity" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fairness]"
+                      dataType="ui1"
+                      name="Fairness" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Use_Of_Resources]"
+                      dataType="ui1"
+                      name="Use_Of_Resources" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Most_Useful_Component]"
+                      dataType="wstr"
+                      length="15"
+                      name="Most_Useful_Component" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input].ExternalColumns[Workload_Perception]"
+                      dataType="wstr"
+                      length="10"
+                      name="Workload_Perception" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Excel\Excel_Data Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Excel\Excel_Data Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel_Data Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Excel\Excel_Data Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Excel.Paths[Excel Source Output]"
+              endId="Package\Load Excel\Excel_Data Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Load Excel\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Faculty"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9F68DF57-A8F0-4D00-9548-AD202B0DE571}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Faculty"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CA9C1E96-9612-46D2-BFB9-18DB26F16505}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_Load_Faculty.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Lecturer"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{63ED16DF-2631-4163-B541-64682D9A5F03}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Lecturer"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CA9C1E96-9612-46D2-BFB9-18DB26F16505}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_Load_Lecturer.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Major"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{92EDEC65-18DF-404C-8C85-168365DE5A61}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Major"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CA9C1E96-9612-46D2-BFB9-18DB26F16505}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_Load_Major.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Performance"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{416978DA-5412-4A40-B91E-2B213B7898CC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Performance"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CA9C1E96-9612-46D2-BFB9-18DB26F16505}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_Load_Performance.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Student"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{124007F9-1892-4943-883C-81A30262E270}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Student"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CA9C1E96-9612-46D2-BFB9-18DB26F16505}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_Load_Student.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Subject"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FB233D42-B1DE-419B-B8B9-05B2E04E7643}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Subject"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CA9C1E96-9612-46D2-BFB9-18DB26F16505}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="ETL_Load_Subject.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1A9BC2E8-AEE6-438A-9AD9-0B1ED097A4E4}"
+      DTS:From="Package\Load Faculty"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load Department" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{C8F0F1DF-D25C-45D1-9EB6-1435C97020FE}"
+      DTS:From="Package\Load Department"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Load Lecturer" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{8EBCF9B4-3630-43C8-9246-D1C72B2C1CEB}"
+      DTS:From="Package\Load Lecturer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load Performance" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{3E1BB443-73DC-4BF0-97FF-BD55A8AA8771}"
+      DTS:From="Package\Load Student"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Load Performance" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{F503E403-3C7D-4AC8-8181-4318800A67BB}"
+      DTS:From="Package\Load Subject"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Load Performance" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{2127A608-6B3E-47EE-A8D9-C67BCC061B41}"
+      DTS:From="Package\Load Major"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Load Performance" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{7D6DA593-AD9F-4010-86DF-0DBA13B27C43}"
+      DTS:From="Package\Load Performance"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Analysis Services Processing Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{44550E8A-3A98-4EA7-8125-E5E2E31B9C89}"
+      DTS:From="Package\Load Excel"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Load Performance" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="236,41.6"
+          Id="Package\Analysis Services Processing Task"
+          TopLeft="393.742857849902,325.211764470609" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Load Department"
+          TopLeft="718.571430101077,117.388235198936" />
+        <NodeLayout
+          Size="128.8,41.6"
+          Id="Package\Load Excel"
+          TopLeft="594.766670928265,42.2131495852752" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Load Faculty"
+          TopLeft="736.428572996233,44.7411764390844" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Load Lecturer"
+          TopLeft="729.285715838171,194.623529248883" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Load Major"
+          TopLeft="132.142857424155,43.9764705574018" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Load Performance"
+          TopLeft="434.000000787632,258.858823310226" />
+        <NodeLayout
+          Size="140.8,41.6"
+          Id="Package\Load Student"
+          TopLeft="440.000000936644,44.7411764390844" />
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\Load Subject"
+          TopLeft="287.857143469915,44.7411764390844" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="802.500001548655,86.3411764390844">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.0470587598514"
+              Start="0,0"
+              End="0,23.5470587598514">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5470587598514" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="800.328572969624,158.988235198936">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.6352940499474"
+              Start="0,0"
+              End="0,28.1352940499474">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1352940499474" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="800.885715838171,236.223529248883">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-232.885715050539,22.6352940613423"
+              Start="0,0"
+              End="-232.885715050539,15.1352940613423">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5722688663399" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5722688663399"
+                    Point2="0,16.5722688663399"
+                    Point3="-4,16.5722688663399" />
+                  <mssgle:LineSegment
+                    End="-228.885715050539,16.5722688663399" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-228.885715050539,16.5722688663399"
+                    Point2="-232.885715050539,16.5722688663399"
+                    Point3="-232.885715050539,20.5722688663399" />
+                  <mssgle:LineSegment
+                    End="-232.885715050539,15.1352940613423" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="513.200000862138,86.3411764390844">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,172.517646871141"
+              Start="0,0"
+              End="0,165.017646871141">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,165.017646871141" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="359.857143469915,86.3411764390844">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="130.142857317718,172.517646871141"
+              Start="0,0"
+              End="130.142857317718,165.017646871141">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,98.5104858219824" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,98.5104858219824"
+                    Point2="0,102.510485821982"
+                    Point3="4,102.510485821982" />
+                  <mssgle:LineSegment
+                    End="126.142857317718,102.510485821982" />
+                  <mssgle:CubicBezierSegment
+                    Point1="126.142857317718,102.510485821982"
+                    Point2="130.142857317718,102.510485821982"
+                    Point3="130.142857317718,106.510485821982" />
+                  <mssgle:LineSegment
+                    End="130.142857317718,165.017646871141" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="205.742857424155,85.5764705574017">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="258.257143363478,173.282352752824"
+              Start="0,0"
+              End="258.257143363478,165.782352752824">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,122.867436836889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,122.867436836889"
+                    Point2="0,126.867436836889"
+                    Point3="4,126.867436836889" />
+                  <mssgle:LineSegment
+                    End="254.257143363478,126.867436836889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="254.257143363478,126.867436836889"
+                    Point2="258.257143363478,126.867436836889"
+                    Point3="258.257143363478,130.867436836889" />
+                  <mssgle:LineSegment
+                    End="258.257143363478,165.782352752824" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="513.871429318767,300.458823310226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.752941160383"
+              Start="0,0"
+              End="0,17.252941160383">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.252941160383" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="659.166670928265,83.8131495852752">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-117.166670140633,175.045673724951"
+              Start="0,0"
+              End="-117.166670140633,167.545673724951">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,100.01264670613" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,100.01264670613"
+                    Point2="0,104.01264670613"
+                    Point3="-4,104.01264670613" />
+                  <mssgle:LineSegment
+                    End="-113.166670140633,104.01264670613" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-113.166670140633,104.01264670613"
+                    Point2="-117.166670140633,104.01264670613"
+                    Point3="-117.166670140633,108.01264670613" />
+                  <mssgle:LineSegment
+                    End="-117.166670140633,167.545673724951" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[DESKTOP-EH9OU6I\MSSQLSERVER2019.UniversityDW 1]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
+  <TaskHost
+    design-time-name="Package\Load Excel">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="186.4,41.6"
+          Id="Package\Load Excel\Excel_Data Destination"
+          TopLeft="403.999993979931,207.999996900559" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Load Excel\Excel Source"
+          TopLeft="427.999993622303,117.999998241663" />
+        <EdgeLayout
+          Id="Package\Load Excel.Paths[Excel Source Output]"
+          TopLeft="497.199993801117,159.599998241663">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.3999986588955"
+              Start="0,0"
+              End="0,40.8999986588955">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.8999986588955" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Excel\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Excel\Excel_Data Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
